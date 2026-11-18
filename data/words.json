@@ -1,0 +1,900 @@
+{
+  "_info": "Slovná zásoba hry. Cvičenia: 'sound' = izolovaná hláska, 'syllables' = slabiky, 'levels' = slová (1 = hláska na začiatku slova, 2 = hláska v strede alebo na konci, 3 = hláska v skupine spoluhlások). 'image' je emoji alebo cesta k obrázku v static/img/. Zoznam je pracovný – pred použitím s deťmi ho má schváliť logopéd.",
+  "phonemes": {
+    "R": {
+      "grapheme": "r",
+      "label": "R",
+      "levels": {
+        "1": [
+          {
+            "word": "ruka",
+            "image": "✋"
+          },
+          {
+            "word": "ryba",
+            "image": "🐟"
+          },
+          {
+            "word": "rak",
+            "image": "🦞"
+          },
+          {
+            "word": "ruža",
+            "image": "🌹"
+          },
+          {
+            "word": "raketa",
+            "image": "🚀"
+          },
+          {
+            "word": "rádio",
+            "image": "📻"
+          },
+          {
+            "word": "rukavica",
+            "image": "🧤"
+          },
+          {
+            "word": "rebrík",
+            "image": "🪜"
+          },
+          {
+            "word": "robot",
+            "image": "🤖"
+          },
+          {
+            "word": "rožok",
+            "image": "🥐"
+          }
+        ],
+        "2": [
+          {
+            "word": "koruna",
+            "image": "👑"
+          },
+          {
+            "word": "žirafa",
+            "image": "🦒"
+          },
+          {
+            "word": "sekera",
+            "image": "🪓"
+          },
+          {
+            "word": "tiger",
+            "image": "🐯"
+          },
+          {
+            "word": "hora",
+            "image": "⛰️"
+          },
+          {
+            "word": "syr",
+            "image": "🧀"
+          },
+          {
+            "word": "dar",
+            "image": "🎁"
+          },
+          {
+            "word": "papier",
+            "image": "📄"
+          },
+          {
+            "word": "more",
+            "image": "🌊"
+          },
+          {
+            "word": "kura",
+            "image": "🐔"
+          }
+        ],
+        "3": [
+          {
+            "word": "mrkva",
+            "image": "🥕"
+          },
+          {
+            "word": "traktor",
+            "image": "🚜"
+          },
+          {
+            "word": "zebra",
+            "image": "🦓"
+          },
+          {
+            "word": "drak",
+            "image": "🐉"
+          },
+          {
+            "word": "hruška",
+            "image": "🍐"
+          },
+          {
+            "word": "strom",
+            "image": "🌳"
+          },
+          {
+            "word": "krab",
+            "image": "🦀"
+          },
+          {
+            "word": "kráľ",
+            "image": "🤴"
+          },
+          {
+            "word": "trúba",
+            "image": "🎺"
+          },
+          {
+            "word": "brána",
+            "image": "🚪"
+          }
+        ]
+      },
+      "sound": {
+        "word": "rrr",
+        "image": "🐯",
+        "hint": "Vrčíme ako tiger: rrrr"
+      },
+      "syllables": [
+        {
+          "word": "ra",
+          "image": "🔤"
+        },
+        {
+          "word": "ro",
+          "image": "🔤"
+        },
+        {
+          "word": "ru",
+          "image": "🔤"
+        },
+        {
+          "word": "re",
+          "image": "🔤"
+        },
+        {
+          "word": "ar",
+          "image": "🔤"
+        },
+        {
+          "word": "or",
+          "image": "🔤"
+        },
+        {
+          "word": "ri",
+          "image": "🔤"
+        },
+        {
+          "word": "ur",
+          "image": "🔤"
+        },
+        {
+          "word": "er",
+          "image": "🔤"
+        },
+        {
+          "word": "ir",
+          "image": "🔤"
+        }
+      ]
+    },
+    "Š": {
+      "grapheme": "š",
+      "label": "Š",
+      "levels": {
+        "1": [
+          {
+            "word": "šaty",
+            "image": "👗"
+          },
+          {
+            "word": "šál",
+            "image": "🧣"
+          },
+          {
+            "word": "šašo",
+            "image": "🤡"
+          },
+          {
+            "word": "šachy",
+            "image": "♟️"
+          },
+          {
+            "word": "šípka",
+            "image": "🏹"
+          },
+          {
+            "word": "šampón",
+            "image": "🧴"
+          },
+          {
+            "word": "šiška",
+            "image": "🌰"
+          },
+          {
+            "word": "šunka",
+            "image": "🍖"
+          },
+          {
+            "word": "šálka",
+            "image": "☕"
+          },
+          {
+            "word": "šofér",
+            "image": "👨‍✈️"
+          }
+        ],
+        "2": [
+          {
+            "word": "mašľa",
+            "image": "🎀"
+          },
+          {
+            "word": "košeľa",
+            "image": "👔"
+          },
+          {
+            "word": "kaša",
+            "image": "🥣"
+          },
+          {
+            "word": "myš",
+            "image": "🐭"
+          },
+          {
+            "word": "uši",
+            "image": "👂"
+          },
+          {
+            "word": "kôš",
+            "image": "🧺"
+          },
+          {
+            "word": "guláš",
+            "image": "🍲"
+          },
+          {
+            "word": "hrášok",
+            "image": "🟢"
+          },
+          {
+            "word": "kašeľ",
+            "image": "🤧"
+          },
+          {
+            "word": "ošípaná",
+            "image": "🐷"
+          }
+        ],
+        "3": [
+          {
+            "word": "škola",
+            "image": "🏫"
+          },
+          {
+            "word": "štetec",
+            "image": "🖌️"
+          },
+          {
+            "word": "hruška",
+            "image": "🍐"
+          },
+          {
+            "word": "šperk",
+            "image": "💍"
+          },
+          {
+            "word": "štvorec",
+            "image": "🟧"
+          },
+          {
+            "word": "šnúrka",
+            "image": "🧵"
+          },
+          {
+            "word": "šťava",
+            "image": "🧃"
+          },
+          {
+            "word": "šmykľavka",
+            "image": "🛝"
+          },
+          {
+            "word": "špagety",
+            "image": "🍝"
+          },
+          {
+            "word": "šťuka",
+            "image": "🐟"
+          }
+        ]
+      },
+      "sound": {
+        "word": "ššš",
+        "image": "🤫",
+        "hint": "Utíšime sa: šššš"
+      },
+      "syllables": [
+        {
+          "word": "ša",
+          "image": "🔤"
+        },
+        {
+          "word": "šo",
+          "image": "🔤"
+        },
+        {
+          "word": "šu",
+          "image": "🔤"
+        },
+        {
+          "word": "ši",
+          "image": "🔤"
+        },
+        {
+          "word": "aš",
+          "image": "🔤"
+        },
+        {
+          "word": "uš",
+          "image": "🔤"
+        },
+        {
+          "word": "še",
+          "image": "🔤"
+        },
+        {
+          "word": "oš",
+          "image": "🔤"
+        },
+        {
+          "word": "iš",
+          "image": "🔤"
+        },
+        {
+          "word": "eš",
+          "image": "🔤"
+        }
+      ]
+    },
+    "L": {
+      "grapheme": "l",
+      "label": "L",
+      "levels": {
+        "1": [
+          {
+            "word": "lev",
+            "image": "🦁"
+          },
+          {
+            "word": "list",
+            "image": "🍃"
+          },
+          {
+            "word": "lama",
+            "image": "🦙"
+          },
+          {
+            "word": "les",
+            "image": "🌲"
+          },
+          {
+            "word": "lyže",
+            "image": "🎿"
+          },
+          {
+            "word": "lopta",
+            "image": "⚽"
+          },
+          {
+            "word": "lampa",
+            "image": "💡"
+          },
+          {
+            "word": "lastovička",
+            "image": "🐦"
+          },
+          {
+            "word": "lízanka",
+            "image": "🍭"
+          },
+          {
+            "word": "loď",
+            "image": "🚢"
+          }
+        ],
+        "2": [
+          {
+            "word": "balón",
+            "image": "🎈"
+          },
+          {
+            "word": "melón",
+            "image": "🍉"
+          },
+          {
+            "word": "orol",
+            "image": "🦅"
+          },
+          {
+            "word": "delfín",
+            "image": "🐬"
+          },
+          {
+            "word": "kolotoč",
+            "image": "🎠"
+          },
+          {
+            "word": "bicykel",
+            "image": "🚲"
+          },
+          {
+            "word": "koleso",
+            "image": "🛞"
+          },
+          {
+            "word": "čokoláda",
+            "image": "🍫"
+          },
+          {
+            "word": "pole",
+            "image": "🌾"
+          },
+          {
+            "word": "balík",
+            "image": "📦"
+          }
+        ],
+        "3": [
+          {
+            "word": "slon",
+            "image": "🐘"
+          },
+          {
+            "word": "klobúk",
+            "image": "🎩"
+          },
+          {
+            "word": "slnko",
+            "image": "☀️"
+          },
+          {
+            "word": "vlak",
+            "image": "🚂"
+          },
+          {
+            "word": "jablko",
+            "image": "🍎"
+          },
+          {
+            "word": "klavír",
+            "image": "🎹"
+          },
+          {
+            "word": "mydlo",
+            "image": "🧼"
+          },
+          {
+            "word": "ihla",
+            "image": "🪡"
+          },
+          {
+            "word": "kladivo",
+            "image": "🔨"
+          },
+          {
+            "word": "blesk",
+            "image": "⚡"
+          }
+        ]
+      },
+      "sound": {
+        "word": "lll",
+        "image": "🎵",
+        "hint": "Spievame: lalala, llll"
+      },
+      "syllables": [
+        {
+          "word": "la",
+          "image": "🔤"
+        },
+        {
+          "word": "lo",
+          "image": "🔤"
+        },
+        {
+          "word": "lu",
+          "image": "🔤"
+        },
+        {
+          "word": "le",
+          "image": "🔤"
+        },
+        {
+          "word": "al",
+          "image": "🔤"
+        },
+        {
+          "word": "ol",
+          "image": "🔤"
+        },
+        {
+          "word": "li",
+          "image": "🔤"
+        },
+        {
+          "word": "ul",
+          "image": "🔤"
+        },
+        {
+          "word": "el",
+          "image": "🔤"
+        },
+        {
+          "word": "il",
+          "image": "🔤"
+        }
+      ]
+    },
+    "C": {
+      "grapheme": "c",
+      "label": "C",
+      "levels": {
+        "1": [
+          {
+            "word": "citrón",
+            "image": "🍋"
+          },
+          {
+            "word": "cibuľa",
+            "image": "🧅"
+          },
+          {
+            "word": "cukrík",
+            "image": "🍬"
+          },
+          {
+            "word": "cirkus",
+            "image": "🎪"
+          },
+          {
+            "word": "cesta",
+            "image": "🛣️"
+          },
+          {
+            "word": "cencúľ",
+            "image": "🧊"
+          },
+          {
+            "word": "cesnak",
+            "image": "🧄"
+          },
+          {
+            "word": "cap",
+            "image": "🐐"
+          },
+          {
+            "word": "cestoviny",
+            "image": "🍝"
+          },
+          {
+            "word": "cent",
+            "image": "🪙"
+          }
+        ],
+        "2": [
+          {
+            "word": "vajce",
+            "image": "🥚"
+          },
+          {
+            "word": "ovca",
+            "image": "🐑"
+          },
+          {
+            "word": "palec",
+            "image": "👍"
+          },
+          {
+            "word": "zajac",
+            "image": "🐇"
+          },
+          {
+            "word": "chlapec",
+            "image": "👦"
+          },
+          {
+            "word": "kukurica",
+            "image": "🌽"
+          },
+          {
+            "word": "ulica",
+            "image": "🏘️"
+          },
+          {
+            "word": "opica",
+            "image": "🐒"
+          },
+          {
+            "word": "lavica",
+            "image": "🪑"
+          },
+          {
+            "word": "pec",
+            "image": "🔥"
+          }
+        ],
+        "3": [
+          {
+            "word": "srdce",
+            "image": "❤️"
+          },
+          {
+            "word": "princezná",
+            "image": "👸"
+          },
+          {
+            "word": "cvrček",
+            "image": "🦗"
+          },
+          {
+            "word": "vrecko",
+            "image": "🛍️"
+          },
+          {
+            "word": "palce",
+            "image": "👍"
+          },
+          {
+            "word": "princ",
+            "image": "🤴"
+          },
+          {
+            "word": "cvikla",
+            "image": "🟣"
+          },
+          {
+            "word": "ocko",
+            "image": "👨"
+          },
+          {
+            "word": "mravce",
+            "image": "🐜"
+          },
+          {
+            "word": "cvičenie",
+            "image": "🤸"
+          }
+        ]
+      },
+      "sound": {
+        "word": "ccc",
+        "image": "🦗",
+        "hint": "Cvrček robí: cccc"
+      },
+      "syllables": [
+        {
+          "word": "ca",
+          "image": "🔤"
+        },
+        {
+          "word": "co",
+          "image": "🔤"
+        },
+        {
+          "word": "cu",
+          "image": "🔤"
+        },
+        {
+          "word": "ci",
+          "image": "🔤"
+        },
+        {
+          "word": "ac",
+          "image": "🔤"
+        },
+        {
+          "word": "oc",
+          "image": "🔤"
+        },
+        {
+          "word": "ce",
+          "image": "🔤"
+        },
+        {
+          "word": "uc",
+          "image": "🔤"
+        },
+        {
+          "word": "ic",
+          "image": "🔤"
+        },
+        {
+          "word": "ec",
+          "image": "🔤"
+        }
+      ]
+    },
+    "K": {
+      "grapheme": "k",
+      "label": "K",
+      "levels": {
+        "1": [
+          {
+            "word": "koza",
+            "image": "🐐"
+          },
+          {
+            "word": "kocka",
+            "image": "🎲"
+          },
+          {
+            "word": "kohút",
+            "image": "🐓"
+          },
+          {
+            "word": "kačka",
+            "image": "🦆"
+          },
+          {
+            "word": "káva",
+            "image": "☕"
+          },
+          {
+            "word": "kôň",
+            "image": "🐴"
+          },
+          {
+            "word": "kaktus",
+            "image": "🌵"
+          },
+          {
+            "word": "kabát",
+            "image": "🧥"
+          },
+          {
+            "word": "kúzelník",
+            "image": "🧙"
+          },
+          {
+            "word": "kapusta",
+            "image": "🥬"
+          }
+        ],
+        "2": [
+          {
+            "word": "oko",
+            "image": "👁️"
+          },
+          {
+            "word": "mačka",
+            "image": "🐈"
+          },
+          {
+            "word": "mlieko",
+            "image": "🥛"
+          },
+          {
+            "word": "pavúk",
+            "image": "🕷️"
+          },
+          {
+            "word": "slimák",
+            "image": "🐌"
+          },
+          {
+            "word": "kukurica",
+            "image": "🌽"
+          },
+          {
+            "word": "lúka",
+            "image": "🌾"
+          },
+          {
+            "word": "vták",
+            "image": "🐦"
+          },
+          {
+            "word": "mak",
+            "image": "🌺"
+          },
+          {
+            "word": "zámok",
+            "image": "🏰"
+          }
+        ],
+        "3": [
+          {
+            "word": "kniha",
+            "image": "📚"
+          },
+          {
+            "word": "kľúč",
+            "image": "🔑"
+          },
+          {
+            "word": "vlk",
+            "image": "🐺"
+          },
+          {
+            "word": "krokodíl",
+            "image": "🐊"
+          },
+          {
+            "word": "krava",
+            "image": "🐄"
+          },
+          {
+            "word": "kruh",
+            "image": "⭕"
+          },
+          {
+            "word": "kvet",
+            "image": "🌸"
+          },
+          {
+            "word": "skala",
+            "image": "🪨"
+          },
+          {
+            "word": "klinec",
+            "image": "🔩"
+          },
+          {
+            "word": "kvapka",
+            "image": "💧"
+          }
+        ]
+      },
+      "sound": {
+        "word": "k-k-k",
+        "image": "⏰",
+        "hint": "Hodiny klopú: k, k, k"
+      },
+      "syllables": [
+        {
+          "word": "ka",
+          "image": "🔤"
+        },
+        {
+          "word": "ko",
+          "image": "🔤"
+        },
+        {
+          "word": "ku",
+          "image": "🔤"
+        },
+        {
+          "word": "ki",
+          "image": "🔤"
+        },
+        {
+          "word": "ak",
+          "image": "🔤"
+        },
+        {
+          "word": "ok",
+          "image": "🔤"
+        },
+        {
+          "word": "ke",
+          "image": "🔤"
+        },
+        {
+          "word": "uk",
+          "image": "🔤"
+        },
+        {
+          "word": "ik",
+          "image": "🔤"
+        },
+        {
+          "word": "ek",
+          "image": "🔤"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Panel pre logopéda – Rečová cesta</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script>try { document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"; } catch (e) {}</script>
+</head>
+<body>
+
+<header class="app-header">
+  <div class="island app-title">
+    <span class="app-logo" aria-hidden="true">📋</span>
+    <h1>Panel pre logopéda</h1>
+    <p>Rečová cesta · Interaktívna logopedická hra s využitím rozpoznávania reči</p>
+  </div>
+</header>
+
+<div class="islands">
+
+  <div class="island" style="grid-column: 1 / -1">
+    <div class="row">
+      <label class="row">Dieťa: <select id="child"></select></label>
+      <a class="btn outlined" id="export" href="/api/export.csv">⬇ Export CSV</a>
+      <a class="btn outlined" href="/api/manifest.csv">⬇ Zoznam nahrávok (pre testovanie ASR)</a>
+      <button class="btn outlined danger" id="delete">Vymazať údaje dieťaťa</button>
+    </div>
+  </div>
+
+  <div class="island table">
+    <h2>Súhrn podľa hlások</h2>
+    <table>
+      <thead><tr>
+        <th>Hláska</th><th>Cvičenie</th><th class="num">Pokusy</th><th class="num">Položky</th>
+        <th>Úspešnosť (≥ 1 ★)</th><th class="num">Ø skóre</th><th class="num">Ø ★</th>
+        <th class="num">Hláska OK (slovo)</th><th class="num">Hláska OK (fonémy)</th><th class="num">Zásahy dospelého</th><th class="num">Ø čas ASR</th>
+      </tr></thead>
+      <tbody id="stats"></tbody>
+    </table>
+  </div>
+
+  <div class="island table">
+    <h2>Pokusy <span class="muted" id="count"></span></h2>
+    <table>
+      <thead><tr>
+        <th>Čas</th><th>Hláska</th><th>Cvičenie</th><th>Úloha</th><th>Pozícia</th><th>Model počul</th><th>Fonémy</th>
+        <th class="num">Podob.</th><th class="num">Istota</th><th class="num">Skóre</th>
+        <th>★</th><th>Výsledok</th><th>Dospelý</th><th title="Čo dieťa naozaj povedalo – podklad pre porovnanie modelov">Naozaj povedal</th><th>Nahrávka</th>
+      </tr></thead>
+      <tbody id="attempts"></tbody>
+    </table>
+    <p class="muted small">Automatické hodnotenie je len pomocná informácia. O správnosti výslovnosti rozhoduje logopéd.
+      Do stĺpca „Naozaj povedal“ zapíšte, čo dieťa skutočne vyslovilo (napr. <i>lyba</i>, <i>saty</i>, <i>la</i>) –
+      z týchto anotácií počíta <code>tools/compare_models.py</code> presnosť modelov.</p>
+  </div>
+
+</div>
+
+<footer class="app-footer">
+  <div class="island footer-inner">
+    <p>© 2026 Rečová cesta · Interaktívna logopedická hra s využitím rozpoznávania reči.
+      Všetko beží lokálne, nahrávky sa nikam neodosielajú.</p>
+    <div class="footer-actions">
+      <a class="btn outlined" href="/">🎮 Späť do hry</a>
+      <button id="theme-toggle" class="btn tonal" type="button">🌙 Tmavá téma</button>
+    </div>
+  </div>
+</footer>
+
+<script src="/static/common.js"></script>
+<script src="/static/therapist.js"></script>
+</body>
+</html>

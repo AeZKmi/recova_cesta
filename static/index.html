@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Rečová cesta</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script>try { document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"; } catch (e) {}</script>
+</head>
+<body>
+
+<header class="app-header">
+  <div class="island app-title">
+    <span class="app-logo" aria-hidden="true">🤖</span>
+    <h1>Rečová cesta</h1>
+    <p>Interaktívna logopedická hra s využitím rozpoznávania reči</p>
+  </div>
+</header>
+
+<!-- ============ 1. NASTAVENIE (pre dospelého) ============ -->
+<section id="screen-setup" class="screen active">
+  <div class="islands">
+
+    <div class="island">
+      <h2>👧 Dieťa</h2>
+      <label class="text-field">
+        <span>Kód dieťaťa</span>
+        <input id="child-code" maxlength="20" placeholder="D01" autocomplete="off">
+        <small>Pseudonym, nie meno – napr. D07</small>
+      </label>
+      <label class="check">
+        <input type="checkbox" id="consent">
+        <span>Rodič súhlasí s uložením nahrávok pre logopéda <small>(inak sa nahrávka po vyhodnotení hneď zmaže)</small></span>
+      </label>
+      <div id="album-setup" class="hidden">
+        <h3>Album nálepiek</h3>
+        <div class="album" id="album-setup-list"></div>
+      </div>
+    </div>
+
+    <div class="island">
+      <h2>🔤 Hláska</h2>
+      <div id="phoneme-buttons" class="chips"></div>
+    </div>
+
+    <div class="island">
+      <h2>🎯 Cvičenie</h2>
+      <div class="chips" id="exercise-buttons">
+        <button data-exercise="sound" class="chip">Hláska <small>(rrr)</small></button>
+        <button data-exercise="syllable" class="chip">Slabiky <small>(ra, ro…)</small></button>
+        <button data-exercise="word" class="chip on">Slová</button>
+      </div>
+      <small id="exercise-note" class="hint"></small>
+      <div id="level-field">
+        <h3>Úroveň</h3>
+        <div class="chips" id="level-buttons">
+          <button data-level="1" class="chip on">1 · hláska na začiatku</button>
+          <button data-level="2" class="chip">2 · v strede / na konci</button>
+          <button data-level="3" class="chip">3 · skupiny spoluhlások</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="island">
+      <h2>🎲 Hra</h2>
+      <h3 class="first">Počet úloh</h3>
+      <div class="chips" id="count-buttons">
+        <button data-count="4" class="chip">4</button>
+        <button data-count="6" class="chip on">6</button>
+        <button data-count="8" class="chip">8</button>
+        <button data-count="10" class="chip">10</button>
+      </div>
+      <h3>Poklad na políčku</h3>
+      <label class="range-field">
+        <input type="range" id="reward-range" min="3" max="18" step="1" value="12">
+        <span id="reward-label">12 z 18 ★</span>
+      </label>
+      <small class="hint">Za každú hviezdičku sa robot posunie o jedno políčko. Poklad dieťa získa,
+        keď nazbiera aspoň toľko hviezdičiek.</small>
+      <h3>Mikrofón</h3>
+      <label class="check">
+        <input type="checkbox" id="mic-processing">
+        <span>Potlačenie šumu prehliadačom <small>(len do hlučnej miestnosti – oslabuje sykavky Š, C, S)</small></span>
+      </label>
+    </div>
+
+    <div class="island island-start">
+      <p class="note">⚠️ Hra je určená pre dieťa <b>spolu s rodičom alebo logopédom</b>.
+        Slovo najprv správne vysloví dospelý, až potom dieťa.</p>
+      <p id="setup-error" class="error" role="alert"></p>
+      <button id="btn-start" class="btn filled large">▶ Začať hru</button>
+      <p class="meta">Model: <span id="model-name">…</span></p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ 2. HRA ============ -->
+<section id="screen-game" class="screen">
+  <div class="islands game">
+
+    <div class="island island-progress">
+      <button id="btn-quit" class="icon-btn" title="Ukončiť hru" aria-label="Ukončiť hru">✕</button>
+      <div class="progress-text"><span id="task-name">Slovo</span> <b id="word-index">1</b> / <b id="word-total">6</b></div>
+      <div class="keys" title="Kľúče">🔑 <b id="keys">0</b></div>
+    </div>
+
+    <div class="island island-board">
+      <div id="board" class="board" aria-hidden="true"></div>
+    </div>
+
+    <div class="island island-robot">
+      <div id="robot" class="robot">🤖</div>
+      <div id="bubble" class="bubble">Ahoj! Poďme na to.</div>
+    </div>
+
+    <div class="island island-word" id="word-card">
+      <div id="word-image" class="word-image">🐟</div>
+      <div id="word-text" class="word-text">ryba</div>
+      <div id="word-hint" class="word-hint"></div>
+      <div id="stars" class="stars"><span>☆</span><span>☆</span><span>☆</span></div>
+      <div class="attempts" id="attempts"></div>
+      <!-- po pokuse: vypočuť si vlastnú nahrávku -->
+      <div id="compare" class="compare hidden">
+        <button id="btn-play-own" class="btn tonal"><span aria-hidden="true">🎧</span> Vypočuť si ma</button>
+      </div>
+    </div>
+
+    <div class="island island-controls">
+      <button id="btn-record" class="mic" aria-label="Nahrávať">🎤</button>
+      <div id="meter" class="meter"><div id="meter-fill"></div></div>
+      <div id="status" class="status">Stlač mikrofón a povedz slovo</div>
+      <div class="after">
+        <button id="btn-retry" class="btn tonal large hidden">↻ Skúsiť znova</button>
+        <button id="btn-next" class="btn filled large hidden">Ďalej ➜</button>
+      </div>
+    </div>
+
+    <!-- panel pre dospelého: výsledok rozpoznávania + ručné hodnotenie -->
+    <details class="island island-adult" id="adult-panel">
+      <summary>🧑‍⚕️ Pre dospelého <small>– čo počul model, ručné hodnotenie</small></summary>
+      <div id="adult-result" class="adult-result">Zatiaľ žiadny pokus.</div>
+      <div class="adult-actions">
+        <button id="btn-accept" class="btn ok" disabled>✓ Uznať výslovnosť</button>
+        <button id="btn-reject" class="btn bad" disabled>✗ Neuznať</button>
+      </div>
+    </details>
+
+  </div>
+</section>
+
+<!-- ============ 3. KONIEC ============ -->
+<section id="screen-end" class="screen">
+  <div class="islands">
+    <div class="island island-end">
+      <div id="chest" class="chest">🧰</div>
+      <h2 id="end-title">Poklad je tvoj!</h2>
+      <div id="reward" class="reward"></div>
+      <p id="summary" class="lead"></p>
+      <div id="album-end" class="album-box hidden">
+        <h3 id="album-end-title">Tvoje nálepky</h3>
+        <div class="album" id="album-end-list"></div>
+      </div>
+      <button id="btn-again" class="btn filled large">Hrať znova</button>
+    </div>
+  </div>
+</section>
+
+<footer class="app-footer">
+  <div class="island footer-inner">
+    <p>© 2026 Rečová cesta · Interaktívna logopedická hra s využitím rozpoznávania reči.
+      Všetko beží lokálne, nahrávky sa nikam neodosielajú.</p>
+    <div class="footer-actions">
+      <a class="btn outlined" href="/terapeut">📋 Panel pre logopéda</a>
+      <button id="theme-toggle" class="btn tonal" type="button">🌙 Tmavá téma</button>
+    </div>
+  </div>
+</footer>
+
+<div id="confetti" aria-hidden="true"></div>
+
+<script src="/static/common.js"></script>
+<script src="/static/recorder.js"></script>
+<script src="/static/game.js"></script>
+</body>
+</html>

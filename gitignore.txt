@@ -1,0 +1,19 @@
+# Prostredie a cache
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+.idea/
+.vscode/
+
+# Testy (na spustenie hry nie sú potrebné)
+tests/
+
+# Údaje detí a lokálne nastavenia – nikdy do repozitára
+data/*
+!data/words.json
+
+# Archívy a modely
+*.zip
+*.log

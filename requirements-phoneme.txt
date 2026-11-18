@@ -1,0 +1,6 @@
+# Nepovinné: fonémový model (hlásky a slabiky). Inštalácia:  pip install -r requirements-phoneme.txt
+# Na počítači bez grafickej karty NVIDIA stačí verzia pre CPU, napr.:
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+torch>=2.1
+transformers>=4.40
+huggingface_hub>=0.20
